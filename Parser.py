@@ -59,9 +59,6 @@ class Parser:
         Args:
             input_file (typing.TextIO): input file.
         """
-        # Your code goes here!
-        # A good place to start is to read all the lines of the input:
-        # input_lines = input_file.read().splitlines()
         self.__input_lines = input_file.read().splitlines()
         self.__input_lines = [Parser.remove_comments(elem) for elem in
                               self.__input_lines]
@@ -76,7 +73,6 @@ class Parser:
         Returns:
             bool: True if there are more commands, False otherwise.
         """
-        # Your code goes here!
         return self.__idx < self.__size
 
     def advance(self) -> None:
@@ -84,7 +80,6 @@ class Parser:
         command. Should be called only if has_more_commands() is true. Initially
         there is no current command.
         """
-        # Your code goes here!
         if self.has_more_commands():
             self.__idx += 1
 
@@ -97,7 +92,6 @@ class Parser:
             "C_PUSH", "C_POP", "C_LABEL", "C_GOTO", "C_IF", "C_FUNCTION",
             "C_RETURN", "C_CALL".
         """
-        # Your code goes here!
         arithmetic_list = ["add", "sub", "neg", "eq", "gt", "lt", "and", "or", "not", "shiftleft", "shiftright"]
         cmd = self.__input_lines[self.__idx][0]
         for act in arithmetic_list:
@@ -127,7 +121,6 @@ class Parser:
             "C_ARITHMETIC", the command itself (add, sub, etc.) is returned. 
             Should not be called if the current command is "C_RETURN".
         """
-        # Your code goes here!
         cmd = self.__input_lines[self.__idx]
         if self.command_type() == "C_ARITHMETIC":
             return cmd[0]

@@ -408,7 +408,7 @@ class CodeWriter:
         Args:
             output_stream (typing.TextIO): output stream.
         """
-        # Your code goes here!
+
         # Note that you can write to output_stream like so:
         # output_stream.write("Hello world! \n")
         self.__output_stream = output_stream
@@ -431,7 +431,7 @@ class CodeWriter:
         Args:
             filename (str): The name of the VM file.
         """
-        # Your code goes here!
+
         # This function is useful when translating code that handles the
         # static segment. For example, in order to prevent collisions between two
         # .vm files which push/pop to the static segment, one can use the current
@@ -453,7 +453,7 @@ class CodeWriter:
         Args:
             command (str): an arithmetic command.
         """
-        # Your code goes here!
+
         cmd_asm = "\n//now we do " + command + " command\n"
         unary_list = ["neg", "not", "shiftleft", "shiftright"]
         equal_list = ["eq", "lt", "gt"]
@@ -482,7 +482,7 @@ class CodeWriter:
             segment (str): the memory segment to operate on.
             index (int): the index in the memory segment.
         """
-        # Your code goes here!
+
         # Note: each reference to "static i" appearing in the file Xxx.vm should
         # be translated to the assembly symbol "Xxx.i". In the subsequent
         # assembly process, the Hack assembler will allocate these symbolic
